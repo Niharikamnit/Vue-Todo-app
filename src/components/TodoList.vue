@@ -6,7 +6,6 @@
       <tr>
         <th scope="col">Task</th>
         <th scope="col">Status</th>
-        <!-- <th scope="col">Edit</th> -->
         <th scope="col">Delete</th>
       </tr>
     </thead>
@@ -18,7 +17,7 @@
         contenteditable="true" 
         v-on:keydown.enter="editTask($event,index)" 
         v-on:blur="editTask($event,index)"        
-        v-bind:class="{done}">{{task.name}}
+        v-bind:class="{'done' : task.finished}">{{task.name}}
         </span>
         </th>
         <td>
@@ -26,11 +25,6 @@
             {{task.status}}
           </button>
         </td>
-        <!-- <td>
-          <div>
-            <button class="btn btn-secondary" v-on:click="editingTask(index)">Edit</button>
-          </div>
-        </td> -->
         <td>
           <div>
             <button type="button" class="btn btn-danger" v-on:click="deleteTask(index)">Delete</button>
@@ -92,7 +86,9 @@ export default observer({
 .pointer {
   cursor: pointer;
 }
+
 .done {
   text-decoration: solid line-through red 4px;
 }
+
 </style>

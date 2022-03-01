@@ -2,15 +2,15 @@
   <div class="about">
     <h1>This is an about page</h1>
     <!-- state getting refreshed between routes/pages -->
-    <!-- <div v-if="vm.undones>0">
+    <div v-if="vm.undones>0">
     <h2> You have {{vm.undones}} tasks pending. Go do them noww </h2>
     </div>
     <div v-else-if="vm.tasks.length>0">
-    All tasks are done! Great Job!
+    <h2>All tasks are done! Great Job! </h2>
     </div>
     <div v-else>
-    No tasks! Add new.
-    </div> -->
+    <h2> No tasks! Joblesss. </h2>
+    </div>
   </div>
 </template>
 
